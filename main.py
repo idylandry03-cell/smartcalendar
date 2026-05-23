@@ -7,9 +7,8 @@ def main(page: ft.Page):
     page.title = "SmartCalendar"
 
     gestionnaire = GestionnaireCalendrier()
-    seances = gestionnaire.get_all_seances()
 
-    afficher_calendrier(page, seances)
+    afficher_calendrier(page, gestionnaire)
 
 
 ft.run(main)

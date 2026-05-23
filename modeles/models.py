@@ -2,11 +2,11 @@ from enum import Enum
 
 
 class TypeSeance(Enum):
-    COURS_MAGISTRAL = "COURS_MAGISTRAL"
-    TD = "TD"
-    TP = "TP"
-    EXAMEN = "EXAMEN"
-    AUTRE = "AUTRE"
+    COURS_MAGISTRAL = "Cours magistral"
+    TD = "Travaux dirigés"
+    TP = "Travaux pratiques"
+    EXAMEN = "Examen"
+    AUTRE = "Autre événement"
 
 
 class Seance:
@@ -29,3 +29,11 @@ class Seance:
         self.est_synchronise = est_synchronise
         self.id_cours = id_cours
         self.type_seance = type_seance
+
+    def afficher_resume(self):
+        return (
+            f"{self.date_seance} | "
+            f"{self.heure_debut}-{self.heure_fin} | "
+            f"{self.salle} | "
+            f"{self.type_seance.value}"
+        )
